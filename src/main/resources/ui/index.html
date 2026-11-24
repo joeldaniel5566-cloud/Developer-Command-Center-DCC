@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Developer Command Center</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span>◆</span> DCC
+            </div>
+
+            <p class="subtitle">Developer Command Center</p>
+
+            <nav>
+                <button class="nav-btn active">Dashboard</button>
+                <button class="nav-btn">Project Analyzer</button>
+                <button class="nav-btn">Database Analyzer</button>
+                <button class="nav-btn">Log Analyzer</button>
+                <button class="nav-btn">System Monitor</button>
+            </nav>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome to your developer workspace.</p>
+                </div>
+
+                <button class="scan-btn" onclick="startScan()">
+                    Scan Project
+                </button>
+            </header>
+
+
+            <!-- Welcome -->
+            <section class="welcome">
+
+                <div>
+                    <p class="small-title">DEVELOPER COMMAND CENTER</p>
+
+                    <h2>Understand your projects<br>
+                    <span>at a glance.</span></h2>
+
+                    <p class="description">
+                        Analyze project structure, source code, databases,
+                        logs and system information from one application.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="cards">
+
+                <div class="card">
+                    <p>Projects</p>
+                    <h2>0</h2>
+                    <span>Scanned projects</span>
+                </div>
+
+                <div class="card">
+                    <p>Files</p>
+                    <h2 id="total-files">0</h2>
+                    <span>Total files analyzed</span>
+                </div>
+
+                <div class="card">
+                    <p>Issues</p>
+                    <h2 id="issues">0</h2>
+                    <span>Potential issues</span>
+                </div>
+
+                <div class="card">
+                    <p>Health</p>
+                    <h2 id="health-score">--</h2>
+                    <span>Project health score</span>
+                </div>
+                <div class="card">
+                    <p>Project Type</p>
+                    <h2 id="project-type">--</h2>
+                    <span>Detected project type</span>
+                </div>
+
+            </section>
+
+			<!-- Language Breakdown -->
+
+			<section class="panel">
+
+			    <h3>Language Breakdown</h3>
+
+			    <p>Files detected by programming language.</p>
+
+			    <div class="language-stats">
+
+			        <div>
+			            <span>Java</span>
+			            <strong id="java-count">0</strong>
+			        </div>
+
+			        <div>
+			            <span>HTML</span>
+			            <strong id="html-count">0</strong>
+			        </div>
+
+			        <div>
+			            <span>CSS</span>
+			            <strong id="css-count">0</strong>
+			        </div>
+
+			        <div>
+			            <span>JavaScript</span>
+			            <strong id="js-count">0</strong>
+			        </div>
+
+			        <div>
+			            <span>SQL</span>
+			            <strong id="sql-count">0</strong>
+			        </div>
+
+			        <div>
+			            <span>Other</span>
+			            <strong id="other-count">0</strong>
+			        </div>
+
+			    </div>
+
+			</section>
+
+            <section class="panel">
+                <h3>Code Metrics</h3>
+                <p>Source code statistics for the selected project.</p>
+
+                <div class="language-stats">
+                    <div>
+                        <span>Total Lines</span>
+                        <strong id="total-lines">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Code Lines</span>
+                        <strong id="code-lines">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Comment Lines</span>
+                        <strong id="comment-lines">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Blank Lines</span>
+                        <strong id="blank-lines">0</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h3>Health Issues</h3>
+                <p>Potential code quality issues detected in the project.</p>
+
+                <div class="language-stats">
+                    <div>
+                        <span>Large Files</span>
+                        <strong id="large-files">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Low Comment Files</span>
+                        <strong id="comment-files">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Many-Method Files</span>
+                        <strong id="method-files">0</strong>
+                    </div>
+                </div>
+            </section>
+			
+			<section class="panel">
+
+			    <h3>Project Files</h3>
+
+			    <p>Files detected in the selected project.</p>
+
+			    <table id="file-table">
+
+			        <thead>
+			            <tr>
+			                <th>File Name</th>
+			                <th>Language</th>
+			                <th>Size</th>
+			            </tr>
+			        </thead>
+
+			        <tbody id="file-table-body">
+			        </tbody>
+
+			    </table>
+
+			</section>
+
+            <!-- Getting Started -->
+            <section class="panel">
+
+                <h3>Getting Started</h3>
+
+                <p>
+                    Select a project folder to begin analyzing your codebase.
+                </p>
+
+                <button class="primary-btn" onclick="startScan()">
+                    + Select Project
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
